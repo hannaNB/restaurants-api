@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Restaurant.destroy_all
+
+@user = User.create(email: "hanna_09@hotmail.fr", password: "azerty")
+@user.save
+
+@Resto = Restaurant.create name: "La tour d'Argent", user_id: 1
+@Resto.save
+
+@Rest = Restaurant.create name: "Le temps des cerises", user_id: 1
+@Rest.save
+
+p "Restaurants created"
